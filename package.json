@@ -1,0 +1,25 @@
+{
+  "name": "solbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "run test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@raydium-io/raydium-sdk-v2": "^0.1.74-alpha",
+    "@solana/spl-token": "^0.4.9",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "fastestsmallesttextencoderdecoder": "^1.0.22",
+    "random": "^5.1.1",
+    "solana": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
