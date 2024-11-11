@@ -37,7 +37,7 @@ const main = async () => {
     //swap params
     const inputMint = new PublicKey("So11111111111111111111111111111111111111112"); // SOL Mint address
     const outputMint = new PublicKey("HuxPgokUry2Xw9wmS6NAvJC9tJRvVG7Gizz8S1aTpump");
-    const amount = 0.001 * 10 ** 9
+    const amount = 0.0001 * 10 ** 9
     const slippage = 20
     const txVersion = 'V0'
     const isInputSol = true
