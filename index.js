@@ -4,7 +4,6 @@ const { NATIVE_MINT, getAssociatedTokenAddress } = require('@solana/spl-token')
 const axios = require('axios'); // or import axios, { AxiosInstance } if creating an instance
 const { API_URLS, ROUTER, TOKEN_PROGRAM_ID, SOLANA_CLUSTER_URL, ApiV3PoolInfoStandardItemCpmm, CpmmKeys, CpmmRpcData, CurveCalculator, SwapCompute} = require('@raydium-io/raydium-sdk-v2');
 const bs58 = require('bs58'); // Ensure bs58 is also imported
-const express = require('express')
 
 
 
@@ -32,8 +31,6 @@ const main = async () => {
         secretKey = process.env.BOT5_PK
     }
 
-    const app = express()
-    const port = 10000;
 
     const owner = Keypair.fromSecretKey(bs58.decode(`${secretKey}`))
     const connection = new Connection('https://api.mainnet-beta.solana.com/')
@@ -109,9 +106,7 @@ const main = async () => {
       }
     }
 
-    app.listen(port, () => {
-      console.log(`Example app listening on port ${port}`)
-    })
+    
 
 }
 
