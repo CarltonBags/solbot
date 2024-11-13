@@ -57,7 +57,7 @@ const main = async () => {
     ) // Use the UR
 
     const swapTransactions  = await axios.post(`${API_URLS.SWAP_HOST}/transaction/swap-base-in`, {
-      computeUnitPriceMicroLamports: "1000000",
+      computeUnitPriceMicroLamports: "5000000",
       swapResponse,
       txVersion,
       wallet: owner.publicKey.toBase58(),
