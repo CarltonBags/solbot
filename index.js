@@ -38,7 +38,7 @@ const main = async () => {
     //swap params
     const inputMint = new PublicKey("So11111111111111111111111111111111111111112"); // SOL Mint address
     const outputMint = new PublicKey("HuxPgokUry2Xw9wmS6NAvJC9tJRvVG7Gizz8S1aTpump");
-    const amount = 0.0001 * 10 ** 9
+    const amount = 0.0005 * 10 ** 9
     const slippage = 20
     const txVersion = 'V0'
     const isInputSol = true
@@ -57,7 +57,7 @@ const main = async () => {
     ) // Use the UR
 
     const swapTransactions  = await axios.post(`${API_URLS.SWAP_HOST}/transaction/swap-base-in`, {
-      computeUnitPriceMicroLamports: "5000000",
+      computeUnitPriceMicroLamports: "1000000",
       swapResponse,
       txVersion,
       wallet: owner.publicKey.toBase58(),
