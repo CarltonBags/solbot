@@ -116,5 +116,5 @@ const main = async () => {
 
 }
 
-main()
-setInterval(main, 20000)
+//main()
+//setInterval(main, 20000)
