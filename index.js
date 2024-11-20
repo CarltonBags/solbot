@@ -18,23 +18,23 @@ const main = async () => {
 
     if(num == 1){
        secretKey = process.env.BOT1_PK
-       bareAmount = 0.005
+       bareAmount = 0.0005
     }
     if(num == 2){
         secretKey = process.env.BOT2_PK
-        bareAmount = 0.006
+        bareAmount = 0.0006
     }
     if(num == 3){
         secretKey = process.env.BOT3_PK
-        bareAmount = 0.007
+        bareAmount = 0.0007
     }
     if(num == 4){
         secretKey = process.env.BOT4_PK
-        bareAmount = 0.004
+        bareAmount = 0.0004
     }
     if(num == 5){
         secretKey = process.env.BOT5_PK
-        bareAmount = 0.0055
+        bareAmount = 0.00055
     }
 
 
@@ -63,7 +63,7 @@ const main = async () => {
     ) // Use the UR
 
     const swapTransactions  = await axios.post(`${API_URLS.SWAP_HOST}/transaction/swap-base-in`, {
-      computeUnitPriceMicroLamports: "500000",
+      computeUnitPriceMicroLamports: "1000000",
       swapResponse,
       txVersion,
       wallet: owner.publicKey.toBase58(),
@@ -117,4 +117,4 @@ const main = async () => {
 }
 
 main()
-setInterval(main, 60000)
+setInterval(main, 20000)
