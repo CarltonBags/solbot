@@ -14,21 +14,27 @@ const main = async () => {
 
     const num = Math.floor(Math.random() * 5) + 1
     let secretKey
+    let bareAmount
 
     if(num == 1){
        secretKey = process.env.BOT1_PK
+       bareAmount = 0.005
     }
     if(num == 2){
         secretKey = process.env.BOT2_PK
+        bareAmount = 0.006
     }
     if(num == 3){
         secretKey = process.env.BOT3_PK
+        bareAmount = 0.007
     }
     if(num == 4){
         secretKey = process.env.BOT4_PK
+        bareAmount = 0.004
     }
     if(num == 5){
         secretKey = process.env.BOT5_PK
+        bareAmount = 0.0055
     }
 
 
@@ -38,8 +44,8 @@ const main = async () => {
     //swap params
     const inputMint = new PublicKey("So11111111111111111111111111111111111111112"); // SOL Mint address
     const outputMint = new PublicKey("HuxPgokUry2Xw9wmS6NAvJC9tJRvVG7Gizz8S1aTpump");
-    const amount = 0.0005 * 10 ** 9
-    const slippage = 20
+    const amount = bareAmount * 10 ** 9
+    const slippage = 10
     const txVersion = 'V0'
     const isInputSol = true
     const isOutputSol = true
@@ -57,7 +63,7 @@ const main = async () => {
     ) // Use the UR
 
     const swapTransactions  = await axios.post(`${API_URLS.SWAP_HOST}/transaction/swap-base-in`, {
-      computeUnitPriceMicroLamports: "1000000",
+      computeUnitPriceMicroLamports: "500000",
       swapResponse,
       txVersion,
       wallet: owner.publicKey.toBase58(),
@@ -111,4 +117,4 @@ const main = async () => {
 }
 
 main()
-setInterval(main, 600000)
+setInterval(main, 60000)
