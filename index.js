@@ -12,29 +12,76 @@ const bs58 = require('bs58'); // Ensure bs58 is also imported
 const main = async () => {
 
 
-    const num = Math.floor(Math.random() * 5) + 1
+    const num = Math.floor(Math.random() * 7) + 1
+    const ranAmount = Math.floor(Math.random() * 14) +1
+
     let secretKey
     let bareAmount
 
+    if (ranAmount == 1){
+      bareAmount = 0.02
+    }
+    if (ranAmount == 2){
+      bareAmount = 0.022
+    }
+    if (ranAmount == 3){
+      bareAmount = 0.024
+    }
+    if (ranAmount == 4){
+      bareAmount = 0.027
+    }
+    if (ranAmount == 5){
+      bareAmount = 0.03
+    }
+    if (ranAmount == 6){
+      bareAmount = 0.032
+    }
+    if (ranAmount == 7){
+      bareAmount = 0.034
+    }
+    if (ranAmount == 8){
+      bareAmount = 0.04
+    }
+    if (ranAmount == 9){
+      bareAmount = 0.042
+    }
+    if (ranAmount == 10){
+      bareAmount = 0.045
+    }
+    if (ranAmount == 11){
+      bareAmount = 0.048
+    }
+    if (ranAmount == 12){
+      bareAmount = 0.05
+    }
+    if (ranAmount == 13){
+      bareAmount = 0.0462
+    }
+    if (ranAmount == 14){
+      bareAmount = 0.0374
+    }
+
+
     if(num == 1){
        secretKey = process.env.BOT1_PK
-       bareAmount = 0.0005
     }
     if(num == 2){
         secretKey = process.env.BOT2_PK
-        bareAmount = 0.0006
     }
     if(num == 3){
         secretKey = process.env.BOT3_PK
-        bareAmount = 0.0007
     }
     if(num == 4){
         secretKey = process.env.BOT4_PK
-        bareAmount = 0.0004
     }
     if(num == 5){
         secretKey = process.env.BOT5_PK
-        bareAmount = 0.00055
+    }
+    if(num == 6){
+      secretKey = process.env.BOT6_PK
+    }
+    if(num == 7){
+      secretKey = process.env.BOT7_PK
     }
 
 
@@ -116,5 +163,5 @@ const main = async () => {
 
 }
 
-//main()
-//setInterval(main, 20000)
+main()
+setInterval(main, 120000)
